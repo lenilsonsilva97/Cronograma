@@ -1,0 +1,71 @@
+\usepackage{enumerate}
+\usepackage{graphicx}
+
+
+\usepackage{color}
+\usepackage{tikz}
+\usepackage{pdflscape}
+\usepackage{capt-of}
+\usepackage{pgfgantt}
+
+\newganttchartelement{orangebar}{
+    orangebar/.style={
+        inner sep=0pt,
+        draw=red!66!black,
+        very thick,
+        top color=white,
+        bottom color=orange!80
+    },
+    orangebar label font=\slshape,
+    orangebar left shift=.1,
+    orangebar right shift=-.1
+}
+
+\newganttchartelement{bluebar}{
+    bluebar/.style={
+        inner sep=0pt,
+        draw=purple!44!black,
+        very thick,
+        top color=white,
+        bottom color=blue!80
+    },
+    bluebar label font=\slshape,
+    bluebar left shift=.1,
+    bluebar right shift=-.1
+}
+
+\newganttchartelement{greenbar}{
+    greenbar/.style={
+        inner sep=0pt,
+        draw=green!50!black,
+        very thick,
+        top color=white,
+        bottom color=green!80
+    },
+    greenbar label font=\slshape,
+    greenbar left shift=.1,
+    greenbar right shift=-.1
+}
+
+% Fim
+
+\graphicspath{ {./img/} }
+
+% Definição da Página
+\usepackage{changepage}
+\usepackage{geometry}
+
+\geometry{
+    paper=a4paper, % Change to letterpaper for US letter
+    inner=0.5cm, % Inner margin
+    outer=0.8cm, % Outer margin
+    bindingoffset=.5cm, % Binding offset
+    top=1.5cm, % Top margin
+    bottom=1.5cm, % Bottom margin
+    marginpar=0.8cm,
+   % showframe, % Uncomment to show how the type block is set on the page
+}
+
+\settitle{Cronograma do Projeto}{REEK Gaming}
+\setauthor{Lenilson Dos Santos Silva}{ lenilsonspfc1@gmail.com }
+\setstartdate
