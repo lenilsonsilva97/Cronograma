@@ -1,0 +1,45 @@
+\begin{tikzpicture}
+\begin{ganttchart}[
+    hgrid style/.style={black, dotted},
+    vgrid={*5{black,dotted}, *1{white, dotted}, *1{black, dashed}},
+    x unit=3mm,
+    y unit chart=9mm,
+    y unit title=12mm,
+    time slot format=isodate,
+    group label font=\bfseries \Large,
+    link/.style={->, thick}
+    ]{2020-09-15}{2020-11-31}
+    \gantttitlecalendar{year, month=name}\\
+ \ganttgroup[
+        group/.append style={fill=orange}
+    ]{Gestão do Projeto}{2020-02-15}{2020-11-31}\\ [grid]
+    \ganttorangebar[
+        name=PLA
+    ]{Planejamento}{2020-09-15}{2020-09-25} \\
+    \ganttorangebar[
+        name=PLA
+    ]{Plano do Projeto}{2020-09-15}{2020-09-20} \\
+    \ganttorangebar{Declaração do Escopo}{2020-09-15}{2020-09-19} \\
+    \ganttlinkedorangebar{Estrutura Analítica do Projeto}{2020-09-16}{2020-09-19} \\
+    \ganttlinkedorangebar{Equipe do Projeto e Responsabilidades}{2020-09-17}{2020-09-18} \\
+    \ganttlinkedorangebar{Plano de Riscos}{2020-09-18}{2020-09-19} \\
+    \ganttlinkedorangebar{Cronograma Detalhado}{2020-09-20}{2020-09-22} \\
+    \ganttlinkedorangebar{Orçamento}{2020-09-21}{2020-09-21} \\
+    \ganttlinkedorangebar{Estratégia de Comunicação}{2020-09-21}{2020-09-21} \\
+    \ganttlinkedorangebar{}{2020-09-21}{2020-09-24} 
+    \ganttlinkedorangebar[ name=VAL_PLA ]{Plano de Gerenciamento de Projetos Aprovado}{2020-09-26}{2020-09-29} \\
+    \ganttorangebar[
+        name=SAL_BAS
+    ]{Salvar a Linha de Base}{2020-09-30}{2020-09-31} \\
+    \ganttorangebar[
+        name=PLA_CLU
+    ]{Planejamento concluído e Linhas de Base Salvas}{2020-10-01}{2020-10-02} [grid] \\
+
+    %Implementing links
+    %\ganttlink[link mid=0.75]{Lev_Ser1}{Apro_Pro}
+    \ganttlink{VAL_PLA}{SAL_BAS}
+    \ganttlink{SAL_BAS}{PLA_CLU}
+    %\ganttlink{Lev_Ser3}{Apro_Pro}
+    %\ganttlink{Lev_Ser4}{Apro_Pro}
+\end{ganttchart}
+\end{tikzpicture}
