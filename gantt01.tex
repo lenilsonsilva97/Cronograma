@@ -1,0 +1,47 @@
+\begin{tikzpicture}
+\begin{ganttchart}[
+    hgrid style/.style={black, dotted},
+    vgrid={*5{black,dotted}, *1{white, dotted}, *1{black, dashed}},
+    x unit=3mm,
+    y unit chart=9mm,
+    y unit title=12mm,
+    time slot format=isodate,
+    group label font=\bfseries \Large,
+    link/.style={->, thick}
+    ]{2020-09-15}{2020-11-31}
+    \gantttitlecalendar{year, month=name}\\
+
+    \ganttgroup[
+        group/.append style={fill=orange}
+    ]{Definição do Projeto REEK }{2020-09-15}{2020-09-21}\\ [grid]
+    \ganttorangebar[
+        name=Lev_Ser1
+    ]{Levantamento da Equipe}{2020-09-15}{2020-09-16}\\ [grid]
+    \ganttorangebar[
+        name=Lev_Ser2
+    ]{Levantamento da Infraestrutura}{2020-09-16}{2020-9-17}\\ [grid]
+    \ganttorangebar[
+        name=Lev_Ser3
+    ]{Levantamento de Equipamanto }{2020-09-15}{2020-09-17}\\ [grid]
+    
+    \ganttorangebar[
+        name=Apro_Pro
+    ]{Aprovação Projeto Sr Raul e Sr Lenilson}{2020-09-15}{2020-09-15}\\ [grid]
+    
+    \ganttgroup[
+        group/.append style={fill=orange}
+    ]{Gestão do Projeto}{2020-09-15}{2020-11-31}\\ [grid]
+    \ganttorangebar[
+        name=FME
+    ]{Iniciação}{2020-09-15}{2020-09-15} \\
+    \ganttorangebar{Termo de Abertura}{2020-09-15}{2020-09-15} [grid]
+ 
+
+    %Implementing links
+    %\ganttlink[link mid=0.75]{Lev_Ser1}{Apro_Pro}
+    \ganttlink{Lev_Ser1}{Apro_Pro}
+    \ganttlink{Lev_Ser2}{Apro_Pro}
+    \ganttlink{Lev_Ser3}{Apro_Pro}
+    \ganttlink{Lev_Ser4}{Apro_Pro}
+\end{ganttchart}
+\end{tikzpicture}
